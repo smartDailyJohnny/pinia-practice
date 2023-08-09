@@ -14,8 +14,14 @@ export const useTaskStore = defineStore('taskStore', {
         favCount() {
             return this.favs.length
         },
-        totalCount() {
-            return this.tasks.length
+        // can't use `this` if you use arrow functions
+        totalCount: (state) => {
+            return state.tasks.length
+        }
+    },
+    actions: {
+        addTask(task) {
+            this.tasks.push(task)
         }
     }
 })
