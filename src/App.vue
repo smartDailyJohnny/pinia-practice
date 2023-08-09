@@ -11,6 +11,8 @@ const filter = ref('all')
 const setFilter = (val) => {
   filter.value = val
 }
+// store actions =================
+taskStore.getTasks()
 </script>
 
 <template>
@@ -31,6 +33,9 @@ const setFilter = (val) => {
       <button @click="setFilter('all')">All Tasks</button>
       <button @click="setFilter('favs')">Fav Tasks</button>
     </nav>
+
+    <!-- loading -->
+    <div class="loading" v-if="taskStore.isLoading">Loading tasks...</div>
 
     <!-- task list -->
     <div class="task-list" v-if="filter === 'all'">
