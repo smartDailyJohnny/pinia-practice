@@ -4,7 +4,12 @@ import { useTaskStore } from '@/stores/TaskStore'
 import TaskDetails from '@/components/TaskDetails.vue'
 
 const taskStore = useTaskStore()
+// state ========================
 const filter = ref('all')
+// methods ======================
+const setFilter = (val) => {
+  filter.value = val
+}
 </script>
 
 <template>
@@ -17,8 +22,8 @@ const filter = ref('all')
 
     <!-- filter -->
     <nav class="filter">
-      <button @click="filter === 'all'">All Tasks</button>
-      <button @click="filter === 'favs'">Fav Tasks</button>
+      <button @click="setFilter('all')">All Tasks</button>
+      <button @click="setFilter('favs')">Fav Tasks</button>
     </nav>
 
     <!-- task list -->
