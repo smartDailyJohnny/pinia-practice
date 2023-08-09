@@ -1,4 +1,5 @@
 <script setup>
+import { storeToRefs } from 'pinia'
 import { ref } from 'vue';
 import { useTaskStore } from '@/stores/TaskStore'
 import TaskDetails from '@/components/TaskDetails.vue'
@@ -13,6 +14,7 @@ const setFilter = (val) => {
 }
 // store actions =================
 taskStore.getTasks()
+// const { tasks, loading, favs, totalCount, favCount } = storeToRefs(taskStore)
 </script>
 
 <template>
@@ -51,5 +53,8 @@ taskStore.getTasks()
         <TaskDetails :task="task" />
       </div>
     </div>
+
+
+    <button @click="taskStore.$reset">Reset State</button>
   </main>
 </template>

@@ -29,13 +29,30 @@ export const useTaskStore = defineStore('taskStore', {
 
             if (res.error) console.log(res.error)
         },
-        deleteTask(deleteId) {
+
+        async deleteTask(deleteId) {
             this.tasks = this.tasks.filter(item => item.id !== deleteId)
+
+            const res = await fetch('http://localhost:3000/tasks/' + deleteId, {
+                method: 'DELETE',
+            })
+
+            if (res.error) console.log(res.error)
         },
-        toggleFav(favId) {
+
+        async toggleFav(favId) {
             const task = this.tasks.find(item => item.id === favId)
             task.isFav = !task.isFav
+
+            const res = await fetch('http://localhost:3000/tasks/' + favId, {
+                method: 'PATCH',
+                body: JSON.stringify({ isFav: task.isFav }),
+                headers: { 'Content-Type': 'application/json' }
+            })
+
+            if (res.error) console.log(res.error)
         },
+    
         async getTasks() {
             this.isLoading = true
 

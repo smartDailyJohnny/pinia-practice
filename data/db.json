@@ -1,39 +1,24 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "title": "play gloomhaven",
-      "isFav": true
-    },
-    {
-      "id": 2,
-      "title": "mow the lawn",
-      "isFav": true
-    },
-    {
-      "title": "become an eldern lord",
+      "title": "zxcvzxcvzxcvzadf",
       "isFav": true,
-      "id": 3
+      "id": 5240
     },
     {
-      "title": "eat some pinapples",
-      "isFav": false,
-      "id": 4
-    },
-    {
-      "title": "have a pooooo",
+      "title": "dfdafd",
       "isFav": true,
-      "id": 562070
+      "id": 3782
     },
     {
-      "title": "adfdf",
+      "title": "ad",
       "isFav": false,
-      "id": 7021
+      "id": 8903
     },
     {
-      "title": "Learn Pinia",
+      "title": "dfads",
       "isFav": false,
-      "id": 7966
+      "id": 9626
     }
   ]
 }
